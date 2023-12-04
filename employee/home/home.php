@@ -1,4 +1,15 @@
-<?php include('../layout/header.php');?>
+<?php 
+session_start();
+
+// Check session status admin account 
+if(!isset($_SESSION['success-login'])){
+  header("Location: ../../auth/login.php?msg=001");
+}else if($_SESSION['role'] != 'employee'){
+  header("Location: ../../auth/login.php?msg=002");
+}
+
+include('../layout/header.php');
+?>
 <!-- Page body -->
 <div class="page-body">
   <div class="container-xl">
