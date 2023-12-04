@@ -1,5 +1,5 @@
-Check Point : #3 Login dan Logout [1:02:20]
-URL : https://youtu.be/6_qrBXU6134?si=K2EE7KMQjPJ0ADzB
+Check Point : #4 CRUD Data Jabatan
+URL : https://youtu.be/qp3FS9RgMOs?si=j2xcqAcztny1_5s-
 
 
 Masalah
