@@ -1,4 +1,6 @@
-<?php require_once('../../config.php')?>
+<?php 
+global $preTitle, $title;
+require_once('../../config.php')?>
 
 <!doctype html>
 <!--
@@ -22,6 +24,9 @@
     <link href=<?= base_url("assets/css/tabler-payments.min.css?1684106062") ?> rel="stylesheet"/>
     <link href=<?= base_url("assets/css/tabler-vendors.min.css?1684106062") ?> rel="stylesheet"/>
     <link href=<?= base_url("assets/css/demo.min.css?1684106062") ?> rel="stylesheet"/>
+
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
       @import url('https://rsms.me/inter/inter.css');
@@ -349,12 +354,16 @@
               <div class="col">
                 <!-- Page pre-title -->
                 <div class="page-pretitle">
-                  Overview
+                  <?= $preTitle ?>
                 </div>
                 <h2 class="page-title">
-                  Dashboard
+                  <?= $title ?>
                 </h2>
               </div>
+              <?php 
+              $currentPage = basename($_SERVER['PHP_SELF'], '.php');
+              if(!in_array($currentPage, ['position', 'addPosition'])){
+              ?>
               <!-- Page title actions -->
               <div class="col-auto ms-auto d-print-none">
                 <div class="btn-list">
@@ -374,6 +383,9 @@
                   </a>
                 </div>
               </div>
+              <?php
+              }
+              ?>
             </div>
           </div>
         </div>

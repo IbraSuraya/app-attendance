@@ -8,6 +8,8 @@ if(!isset($_SESSION['success-login'])){
   header("Location: ../../auth/login.php?msg=002");
 }
 
+$preTitle = "Overview";
+$title = "Dashboard";
 include('../layout/header.php');
 ?>
 <!-- Page body -->
