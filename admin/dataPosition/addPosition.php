@@ -1,5 +1,6 @@
 <?php 
 session_start();
+ob_start();
 
 // Check session status admin account 
 if(!isset($_SESSION['success-login'])){
@@ -14,6 +15,24 @@ include('../layout/header.php');
 include('../../auth/funcEncryp.php');
 
 require_once('../../config.php');
+if(isset($_POST['submit'])){
+  $position = htmlspecialchars($_POST['position']);
+  if($_SERVER['REQUEST_METHOD'] == "POST"){
+    if(empty($position)){
+      $msgError = "Your form is empty";
+    }
+
+    if(!empty($msgError)){
+      $_SESSION['validAddPosition'] = $msgError;
+    }else{
+      $result = mysqli_query($connection, "INSERT INTO position (position) VALUES('$position')");
+
+      $_SESSION['successAddPosition'] = "Successfully added data";
+      header("Location: position.php");
+      exit;
+    }
+  }
+}
 
 ?>
 <!-- Page body -->

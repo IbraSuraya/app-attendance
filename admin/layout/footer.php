@@ -147,5 +147,52 @@
     <script src=<?= base_url("assets/js/tabler.min.js?1684106062") ?> defer></script>
     <script src=<?= base_url("assets/js/demo.min.js?1684106062") ?> defer></script>
     
+    <!-- add-ons  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- alert validAddPosition -->
+    <?php if(isset($_SESSION['validAddPosition'])) : ?>
+    <script>
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "bottom-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "error",
+        title: "<?= $_SESSION['validAddPosition']?>"
+      });
+    </script>
+    <?php unset($_SESSION['validAddPosition']);?>
+    <?php endif?>
+
+    <!-- alert successAddPosition -->
+    <?php if(isset($_SESSION['successAddPosition'])) : ?>
+    <script>
+      const ToastSuccess = Swal.mixin({
+        toast: true,
+        position: "bottom-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      ToastSuccess.fire({
+        icon: "success",
+        title: "<?= $_SESSION['successAddPosition']?>"
+      });
+    </script>
+    <?php unset($_SESSION['successAddPosition']);?>
+    <?php endif?>
+
   </body>
 </html>

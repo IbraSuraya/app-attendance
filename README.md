@@ -1,9 +1,10 @@
-Check Point : #4 CRUD Data Jabatan [Read, Add~]
-URL : https://youtu.be/qp3FS9RgMOs?si=j2xcqAcztny1_5s- [31.00]
+- Check Point : #4 CRUD Data Jabatan [Add, Edit~]
+- URL : https://youtu.be/qp3FS9RgMOs?si=j2xcqAcztny1_5s- [51.00]
 
 
 Masalah
-- ?id dibuat enkripsi
+- segala input data ke db dibikin lowercase dan ouputnya dibikin Capitalize
+- pada addPosition : jika inputan redudant dengan BD kasih alert dan tidak tersimpan
 - Semua dibuat base url
 - Banyak fitur dashboard yang tidak dijelaskan di video tutorial
 - Masalah Session Akun Login
@@ -24,3 +25,4 @@ tech?
 - https://tabler.io/
 - https://tabler.io/icons
 - https://fontawesome.com/
+- https://sweetalert2.github.io/ 
